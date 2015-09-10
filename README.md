@@ -67,25 +67,27 @@ Callback functions are functions within a function. A callback allows us to run 
 
 1. Write a function named `getAnimals` that uses the jQuery `ajax` method to retrieve the `data/animals.json` file. When you execute the functions, it should just log *just the array* of animals to the console when the async is complete. Make sure you provide a prompt of "animals" when logging the array.
 1. What are the four HTTP verbs that you can use in an XHR that correspond to the CRUD actions (create, read, update, delete)?
-  GET, POST, PUT & DELETE
+ 
+         GET, POST, PUT & DELETE
 
 1. Why did we use Promises when dealing with asynchronous XHR calls?'
-2. 
-  Promises maintain their state and can be accesses at any point within the code.  Also, using then() allowed us to organize the order in which code executed.  In addition, it provided instructions for a fail that may have (but never did for me) provided a useful message as to why it failed.
+
+
+    Promises maintain their state and can be accesses at any point within the code.  Also, using then() allowed us to organize the order in which code executed.  In addition, it provided instructions for a fail that may have (but never did for me) provided a useful message as to why it failed.
 
 2. Provide a simple example of the syntax for handling a Promise.
-  
-    function example() {
-        var defered = Q.defer()
-        $.ajax ({images.json })
-        .done (function (data) {
-          defer.resolved(data)
-        })
-        .fail(function(xhr, status, error) {
-          defer.reject(error)
-        });
-        return deferred.promise;
-     }
+
+          function example() {
+             var defered = Q.defer()
+             $.ajax ({images.json })
+             .done (function (data) {
+               defer.resolved(data)
+             })
+             .fail(function(xhr, status, error) {
+               defer.reject(error)
+             });
+             return deferred.promise;
+          }
 
 ## Scope and this
 
