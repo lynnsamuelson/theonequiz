@@ -28,10 +28,17 @@ http-server
 ## JavaScript concepts
 1. Explain what hoisting is. Provide your answer below.
 
-  **Student answer: **
-1. What is a callback? Why do we use them in JavaScript? Provide your answer, and code a simple example below.
+Hoisting is how javascript views varriables.  It is equivalent to bringing all declared varriables to the top of the scope.  Thus if the varrible is declared in the global scope, the variable would be at the top of the   file (outside of any functions) and be accessible to all the code.  If a variable is declared within a function, then hoisting would declare the variable at the begining of the function and all code within the scope of the function would have access to that variable, but it would not be available outside the scope of the function.
+     
+2. What is a callback? Why do we use them in JavaScript? Provide your answer, and code a simple example below.
 
-  **Student answer: **
+Callback functions are functions within a function. A callback allows us to run a piece of code after another event takes place.  In JavaScript, code which requires certian information may be loaded first.  Since the code does not have the information it needs, nothing happens.  A callback is used to rerun the code in question once the desired information is available.   One example of a callback is the onclick function. The code does not execute until the button is clicked.
+  
+  example: 
+      $('#inputData').click(function (log) {
+        console.log("button clicked");
+      });
+  
 
 ## Functions and operators
 
@@ -60,19 +67,33 @@ http-server
 
 1. Write a function named `getAnimals` that uses the jQuery `ajax` method to retrieve the `data/animals.json` file. When you execute the functions, it should just log *just the array* of animals to the console when the async is complete. Make sure you provide a prompt of "animals" when logging the array.
 1. What are the four HTTP verbs that you can use in an XHR that correspond to the CRUD actions (create, read, update, delete)?
-  **Student answer:**
+ 
+         GET, POST, PUT & DELETE
 
-1. Why did we use Promises when dealing with asynchronous XHR calls?
-  **Student answer:**
+1. Why did we use Promises when dealing with asynchronous XHR calls?'
 
-1. Provide a simple example of the syntax for handling a Promise.
-  **Student answer:**
+
+    Promises maintain their state and can be accesses at any point within the code.  Also, using then() allowed us to organize the order in which code executed.  In addition, it provided instructions for a fail that may have (but never did for me) provided a useful message as to why it failed.
+
+2. Provide a simple example of the syntax for handling a Promise.
+
+          function example() {
+             var defered = Q.defer()
+             $.ajax ({images.json })
+             .done (function (data) {
+               defer.resolved(data)
+             })
+             .fail(function(xhr, status, error) {
+               defer.reject(error)
+             });
+             return deferred.promise;
+          }
 
 ## Scope and this
 
 What gets logged to the console when the following code executes? Explain why.
 
-**Student answer: **
+42 - The reason why has to do with call stack and call site.  I'm not 100% clear on this, but I think it's because steve() is the function that is called and the other definitions of answer are within the scopes of the other functions and cannot be accessed outside the function.
 
 ```
 var answer = "42";
