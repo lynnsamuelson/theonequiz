@@ -1,0 +1,28 @@
+
+
+ul > li:first-child {
+
+li {
+  text-align: inline;
+}
+}
+
+ul > li:nth-child(2n+1) {
+  border: 2px solid black;
+}
+
+ul > li:nth-child(2n) {
+  background-color: lime;
+}
+
+section:nth-child(2n) > aside:first-child {
+  color: blue;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left
+}
